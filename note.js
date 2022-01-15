@@ -161,7 +161,7 @@ Understanding JsX
 
   Explanation
 
-  The createElement method in react contents at least 3 properties
+  The createElement method in react contains at least 3 properties
     1.  Html Element
     2.  Attributes like class, id, etc.. and if there isn't one add null like in "h1"
     3.  TextContent or child element
@@ -250,7 +250,7 @@ An insight into React HOOKS
   *	The function Based uses react hooks or can use react hooks, if you want it to
 
   // CB --> class based ::FB--> function based
-  * In the Cb you can use a special property called "state" which can have several item like array, string all in one object but what makes it special is that react constantly looks at the state object and when changes are made, it takes note of it and renders it on our page like a change in it's property value of something like that and normally that can't be done using fb react component, and for that react hooks was created to give the state property to fb react component.
+  * In the Cb you can use a special property called "state" which can have several item like array, string all in one object but what makes it special is that react constantly looks at the state object and when changes are made, it takes note of it and renders it on our page like a change in it's property value or something like that and normally that can't be done using fb react component, and for that react hooks was created to give the state property to fb react component.
 
   *	Through the series of this lesson we will see how it's done.
 
