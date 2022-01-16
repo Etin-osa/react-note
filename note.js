@@ -271,7 +271,7 @@ An insight into React HOOKS
 
 //   switchNameHandler = () => {
 //     // console.log('Hippy ya ye!!')
-//     this.setState({ // The setState function on works in state property (state property is a special property in react not a regular custom propety created and one of it's features is that it can be updated and re-rendered quite easily)
+//     this.setState({ // The setState function only works in state property (state property is a special property in react not a regular custom propety created and one of it's features is that it can be updated and re-rendered quite easily)
 //       persons: [
 //         { name: "Maximillian", age: 28 },
 //         { name: "Manu", age: 27 },
