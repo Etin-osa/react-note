@@ -300,7 +300,7 @@ An insight into React HOOKS
 // Using state and re-rendering using Function based React Component
 // It done using react hooks and the most important react hooks is useState
 // Import useState before it can be used eg import React, { useState } from 'react'
-const App = () => {
+const App = () => { 
   const [personState, setPersonState] = useState({ ]
     // useState returns 2 parameters. The first is the state like in class based react {this.state} while the other functions like setState({})
     persons: [
