@@ -9,7 +9,7 @@ To install React on your local machine
   2.  create-react-app name-of-react-app
 
   3.  cd into the project and run
-    npm start - to start your project
+      npm start - to start your project
 
 
 */
@@ -20,26 +20,26 @@ To install React on your local machine
 
 /*
 
-Arranging a React Folder 
+Arranging a React Folder
 
   * Best practice is to put every component created into a component folder in src folder eg.
 
-  src 
+  src
     components
       Person "Folder"
         Person.js "component created"
       List "Folder"
         List.js "component created"
-        
+
   * Also you could add a container folder to React to seperate the App.js file which is the main container. eg
 
-  src 
+  src
     components
       Person "Folder"
         Person.js "Actual component"
       List "Folder"
         List.js "Actual component"
-    
+
     container
       App.js
       App.css
@@ -51,7 +51,7 @@ Arranging a React Folder
 
   * Where a state is created is mainly where it is updated or changed. And any other function or action show adviceably be done in a different component
 
-  * 
+  *
 
 */
 
@@ -71,7 +71,7 @@ Debugging!
 
   * In sources open the current js file and observe your code to find the mistake(s) made.
 
-  * To see element that are actually rendered to the real DOM in react or any app specifically 
+  * To see element that are actually rendered to the real DOM in react or any app specifically
     - Go to the dev tools in chrome
     - Click on 3 vertical dots on the menu
     - Select rendering
@@ -300,7 +300,7 @@ An insight into React HOOKS
 // Using state and re-rendering using Function based React Component
 // It done using react hooks and the most important react hooks is useState
 // Import useState before it can be used eg import React, { useState } from 'react'
-const App = () => { 
+const App = () => {
   const [personState, setPersonState] = useState({ ]
     // useState returns 2 parameters. The first is the state like in class based react {this.state} while the other functions like setState({})
     persons: [
@@ -602,7 +602,7 @@ export default Radium(Name-of-App);
 
 Adding Media Queries to Inline Styles React Using Radium
 
-  Like noraml in the variable 
+  Like noraml in the variable
 let styles = {
   '@media (max-width: 650px)': {
     'width': '60%',
@@ -647,7 +647,7 @@ const StyledDiv = styled.div`
   box-shadow: 0 2px 3px #ccc;
   padding: 16px;
   text-align: center;
-  
+
   @media screen and (max-width: 650px) {
     width: 60%;
   }
@@ -669,7 +669,7 @@ It uses backticks install of calling a function and in it ticks you can add the 
 To add more flexibility to it (eg. add styles if something is true like we did before)
 
 const StyledButton = styled.button`
-  background-color: ${props => props.alt ? 'red' : blue};
+  background-color: ${props => props.alt ? 'red' : 'blue'};
 `
 
 class Person extends Component = props => {
@@ -707,21 +707,21 @@ CSS Modules
 
 Note: Before we start, note that this works for react scripts of version 1. If it's version 2, it will be something different
 
-  Creating custom css files like in normal React js but it's then not global sytles but for each js component 
-  
+  Creating custom css files like in normal React js but it's then not global sytles but for each js component
+
   To do that first in the command line run 'npm run eject'
 
   Note: If thrown an error in the command line, It most time means you have to git initialize the folder
     Which means you have to simply do 'git init' then 'git add .' then 'git commit -m "What ever you want to say here"';
 
-  That then gives you access to the config file (What makes react under the hood), So it can be tweaked to prevent global custom css file. 
+  That then gives you access to the config file (What makes react under the hood), So it can be tweaked to prevent global custom css file.
 
-  After ejecting the file go to 
+  After ejecting the file go to
     config
       webpack.config.dev.js
       webpack.config.prod.js
 
-  Look for--> 
+  Look for-->
     ...{
       test: /\.css$/,
       use: [
@@ -731,7 +731,7 @@ Note: Before we start, note that this works for react scripts of version 1. If i
           options: {
             importLoaders: 1,...
 
-  In the options object above after the first props (importLoaders) add, In the ...prod.js there is going to be more property but just add it to after the end of the last props seen there 
+  In the options object above after the first props (importLoaders) add, In the ...prod.js there is going to be more property but just add it to after the end of the last props seen there
     modules: true,
     localIdentName: '[name]__[local]__[hash:base64:5]'
 
@@ -767,7 +767,7 @@ For scripts version 2. and above
 
 /*
 
-How CSS Modules Work 
+How CSS Modules Work
 
   * After writing normal css eg
 .App {
@@ -776,7 +776,7 @@ How CSS Modules Work
 }
 
 in JS
-  import classes['Any name can be chosen instead of classes'] from './App.css' 
+  import classes['Any name can be chosen instead of classes'] from './App.css'
 
 render() {
   return (
@@ -809,12 +809,12 @@ render() {
 Class-Based and Functional Components
 
   Class Based
-    * class nameOfChoice extends Component 
+    * class nameOfChoice extends Component
     * Access to state
     * Access to Lifecycle Hooks
     * Access state and props via "this" keyword
     * Dosen't use React hooks
-  
+
   Function Based
     * const nameOfChoice = props =>...
     * Access to state (useState{})
@@ -849,12 +849,12 @@ Component LifeCycle Hooks - Creation
 
 Constructor(props)
 
-  # When a component is created first of all the constructor get called. Although constructor isn't a lifecycle hook but a normal ES6 class feature, It does has access to the component props 
-    - You have to call super(props) in the constructor 
+  # When a component is created first of all the constructor get called. Although constructor isn't a lifecycle hook but a normal ES6 class feature, It does has access to the component props
+    - You have to call super(props) in the constructor
 
   # You only call super(props) only if you add constructor(props) to your project. If you don't add constructor(props), super(props) is called for you by default
 
-  # You can set state in the constructor 
+  # You can set state in the constructor
     constructor(props) {
       super(props);
       this.state: {...}
@@ -865,7 +865,7 @@ Constructor(props)
 
 getDerivedStateFromProps(props, state)
 
-  # Whenever your props change for your class based component you can sync you state to them 
+  # Whenever your props change for your class based component you can sync you state to them
     It quite a rare use case.
 
   #the getDerivedStateFromProps method is a static method so it's called like this
@@ -876,7 +876,7 @@ getDerivedStateFromProps(props, state)
 
 render()
 
-  # We already know this method for being the method that returns jsX 
+  # We already know this method for being the method that returns jsX
 
   # Note that when the render method is called all the children component in the render method and their life cycle hooks are called will the life cycle of render finish.
 
@@ -929,7 +929,7 @@ getSnapshotBeforeUpdate(prevProps, prevState)
 
   # Another rarely used method, it retuns a snapshot object which you can freely configure
 
-  # The snapshot object that is returned can be used in the componentDidUpdate 
+  # The snapshot object that is returned can be used in the componentDidUpdate
 
   # No side-effect as well
 
@@ -983,9 +983,9 @@ Lifecycle Hook for Function based React Component "useEffect()"
 
   + useEffect is basically componentDidMount and componentDidUpdate in one function and you can use multiple useEffect in one component (nameofComponent.js)
 
-  + useEffect can be rendered on conditions, for example 
+  + useEffect can be rendered on conditions, for example
     this useEffect will run only when there is a change in 'props.currentNote'
-    useEffect(() => { //Do something }, [props.currentNote]) 
+    useEffect(() => { //Do something }, [props.currentNote])
 
     Any command in the useEffect will render in the first instance and any other time there is a change in the props.currentNote property
 
@@ -1010,7 +1010,7 @@ Lifecycle Hook for Function based React Component "useEffect()"
 
 /*
 
-Doing clean-Up work   
+Doing clean-Up work
   componentWillUnmount
   useEffect()
   React.memo()
@@ -1025,7 +1025,7 @@ Doing clean-Up work
 
 componentWillUnmount()
 
-  + in componentWillMount() like the rest of the lifecycle hooks it can be called in the class and act like normal 
+  + in componentWillMount() like the rest of the lifecycle hooks it can be called in the class and act like normal
 
 
 useEffect()
@@ -1050,12 +1050,12 @@ React.memo()
 
   + When it comes to updating or re-rendering of components you have to realize that not all components need to rendered for every change and especially not the ones that have nothing to do with the change because that will be weird. And to avoid that we use can use React.memo
 
-  + React.memo is added to name of the component when exported 
+  + React.memo is added to name of the component when exported
     export default React.memo(NameOfComponent);
 
-  + Now what React.memo actually do is memorize you element when its was rendered last and if there is changes to your document and nothing affect the component it gives back to one last stored instead of re-rendering the entire Component
+  + Now what React.memo actually do is memorize you element when its was rendered last and if there is changes to your document and nothing affect the component it gives back the one last stored instead of re-rendering the entire Component
 
-  + And note: As a tip if you can avoid that an element re-renders due to external changes that can be avoided, Avoid IT!!
+  + And note: As a tip if you can avoid that an element re-renders due to external changes, Avoid IT!!
 
 */
 
@@ -1075,11 +1075,11 @@ React.memo()
 Pure Component
 
   + If for example you want to check for updates in all your props property another alternative instead of shouldComponentUpdate is PureComponent
-  
+
   + PureComponent is another method in the react clased based component that we can use instead of the normal component in react
 
   + By default PureComponent only re-renders when there is a change in any of the props property. What it does is that it checks for changes in all the props related to that component and if there is a change it re-renders
-  
+
   + Thereby there is no need for shouldComponentUpdate and PureComponent saves us from more code
 
 */
@@ -1103,15 +1103,15 @@ Understanding Virtual Dom
 
   + In react as you know there is something called the virtual DOM. React dosen't instantly render to changes to the real DOM
 
-  + First it compares the old Virtual DOM to the new/re-render/future DOM 
+  + First it compares the old Virtual DOM to the new/re-render/future DOM
 
   + The virtual DOM is a  DOM representation in javascript, Meaning the entire HTML before it gets rendered is created purely first in javascript
-  
-  + The new Virtual DOM is one created when the render method is called. And then react makes a comparison between the old and the new DOM, if there are changes it updates only the part that changed and not the entire DOM and if there is no comparison it dosen't update anything.
+
+  + The new Virtual DOM is one created when the render method is called. And then react makes a comparison between the old and the new DOM, if there are changes it updates only the part that changed and not the entire DOM and if there are no changes it dosen't update anything.
 
     Which is why shouldComponentUpdate is in React to prevent the render method from calling if there is no change or there is a change and we don't want it
 
-    It's not a must that we must use shouldComponentUpdate to check for changes all the time but if there if you want to. USE WISELY
+    It's not a must that we must use shouldComponentUpdate to check for changes all the time but if you want to. USE WISELY
 
   + To see how only the changed elements are rendered go to chrome notice the element change in dev tools; Under elements
 
@@ -1140,7 +1140,7 @@ Adjacent Elements
 
   + That can be avoided by several steps
 
-1.  Return Array 
+1.  Return Array
 
 const nameOfComponent = props => {
   return [
@@ -1152,7 +1152,7 @@ const nameOfComponent = props => {
 
   + Each line has to have a comma (,) at the end
 
-  + Each elemeent has to have a key so that when there is changes react knows which one needs to be updated
+  + Each element has to have a key so that when there is changes react knows which one needs to be updated
 
 
 
@@ -1169,7 +1169,7 @@ In Auxiliary.js
 const Auxiliary = props => props.children;
 export default Auxiliary;
 
-  + In those 2 lines of code the higher order component is created. The 'children' property is property given in react so the Auxiliary js can have children inside and yes you don't have to import react to this file. 
+  + In those 2 lines of code the higher order component is created. The 'children' property is property given in react so the Auxiliary js can have children inside and yes you don't have to import react to this file.
 
 In any other js file you like (Can be more than one)
 
@@ -1259,11 +1259,11 @@ const withClass = (WrappedComponent, classN) => {
 
 export default withClass
 
-  + Let's break down the above code; we already know the top import part so we will start from the withClass function which can be anyName you choose we are adding className to the parent div and wrapping our element in it so that is why am calling it 'withClass'
+  + Let's break down the above code; we already know the top import part so we will start from the withClass function which can be anyName you choose. We are adding className to the parent div and wrapping our element in it so that is why am calling it 'withClass'
 
   + Now the withClass = (WrappedComponent, classN) => {...
 
-    This is just a normal js function that takes in 2 elements as you can see in the code above the first property is a component that's why it's start with a copital letter
+    This is just a normal js function that takes in 2 elements as you can see in the code above the first property is a component that's why it's start with a capital letter
 
   + After that there is return props => {...
 
@@ -1282,10 +1282,10 @@ export default withClass
 
 
 SIDE NOTE::
-  + As you notice in the function we set props in the return but never used it. 
+  + As you notice in the function we set props in the return but never used it.
 
   + And if we don't use it, the props in the component wrapped wouldn't work because it dosent expect anything
-  
+
   + To use it correctly is that in the WrappedComponent we spread props like this
     ...<WrappedComponent {...props} />
 
@@ -1378,7 +1378,7 @@ Ref
 
       In the above code what we did is simply add a function to the ref and the parameter has access to the input element and then 'this.inputEl' is a global scope variable which is now set to the inp
 
-      ii. For example if we want make the inp be focused on when something happens (when a couple of html becomes visible)
+      ii. For example if we want to make the inp be focused on when something happens (when a couple of html becomes visible)
       componentDidMount() {
         this.inputEl.focus()
       }
@@ -1392,20 +1392,20 @@ Ref
         this.inp = React.createRef();
       }
 
-      ii. In the input 
+      ii. In the input
       <input ref={this.inp} />
 
-      iii. In componentDidMount (it is called after render() and constructor())  
+      iii. In componentDidMount (it is called after render() and constructor())
       componentDidMount() {
         this.inp.current.focus()
       }
 
       The current is the property with access to the input html(DOM)
 
-    
+
 
   + In Function based Component
-    
+
       i.  We use a React hook called useRef
       import React, { useRef } from 'react';
 
@@ -1422,7 +1422,7 @@ Ref
 
       useEffect(() => {
         whatEver.current.click()
-      }) 
+      })
 
 
 
